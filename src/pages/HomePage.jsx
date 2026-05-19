@@ -1,4 +1,4 @@
-import { main } from "@popperjs/core"
+
 
 
 export default function HomePage (){
