@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { Link } from "react-router-dom"
 
 
 export default function HomePage (){
@@ -13,7 +13,7 @@ export default function HomePage (){
             .then((data) => {
                 console.log(data);
             // qui salvi i dati nello stato
-            setCharacters(data);
+            setCharacters(data.results);
         })
     }
 
@@ -35,12 +35,16 @@ export default function HomePage (){
                 </div>
             </div>
             <div className="container">
-                <div className="row">
+                <div className="row g-3">
                     {
                         characters.map(character =>(
-                            <div className="col" key={character.id}>
+                            <div className="col-4" key={character.id}>
                                 <div className="card">
                                     <img src={character.image} alt="" />
+                                    <div className="card-body">
+                                        <p>{character.name}</p>
+                                        <Link to="">view more</Link>
+                                    </div>
                                 </div>
                             </div>
                         ))
