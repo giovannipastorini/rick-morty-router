@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage"
 import DefaultLayout from "./layouts/DefaultLayout"
 import AboutPage from "./pages/AboutPage"
 import ContactsPage from "./pages/ContactsPage"
-
+import DocsPage from "./pages/DocsPage"
 
 function App() {
  
@@ -16,6 +16,7 @@ function App() {
             <Route index element={ <HomePage />} />
             <Route path="/about" element={ <AboutPage />} />
             <Route path="/contacts" element={ <ContactsPage />} />
+            <Route path="/docs" element={ <DocsPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
