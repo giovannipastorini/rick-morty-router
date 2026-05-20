@@ -14,7 +14,8 @@ export default function HomePage (){
                 console.log(data);
             // qui salvi i dati nello stato
             setCharacters(data.results);
-        })
+            })
+            .catch(err => console.error(err));
     }
 
     useEffect(()=>{
@@ -22,7 +23,7 @@ export default function HomePage (){
     }, [])
 
     return(
-        <main>
+        <main className="min-vh-100">
             <h1>HomePage</h1>
             <div className="p-5 mb-4 bg-light rounded-3">
                 <div className="container-fluid py-5">
@@ -38,12 +39,12 @@ export default function HomePage (){
                 <div className="row g-3">
                     {
                         characters.map(character =>(
-                            <div className="col-4" key={character.id}>
+                            <div className="col-sm-12 col-md-4 col-lg-3" key={character.id}>
                                 <div className="card">
                                     <img src={character.image} alt="" />
                                     <div className="card-body">
                                         <p>{character.name}</p>
-                                        <Link to="">view more</Link>
+                                        <Link to={`characters/${character.id}`} >view more</Link>
                                     </div>
                                 </div>
                             </div>

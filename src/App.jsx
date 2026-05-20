@@ -5,6 +5,7 @@ import AboutPage from "./pages/AboutPage"
 import ContactsPage from "./pages/ContactsPage"
 import DocsPage from "./pages/DocsPage"
 import CharacterPage from "./pages/CharacterPage"
+import NotFoundPage from "./pages/NotFoundPage"
 
 function App() {
  
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={ <AboutPage />} />
             <Route path="/contacts" element={ <ContactsPage />} />
             <Route path="/docs" element={ <DocsPage />} />
+            <Route path="*" element={ <NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

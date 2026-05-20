@@ -29,22 +29,36 @@ export default function AppHeader (){
     ]
 
     return(
-        <header>
-            <nav className="navbar d-flex justify-content-start gap-4">
-                <div className=" logo nav-brand">
-                    Rick and Morty
+        <> 
+         <header>
+           <nav className="navbar navbar-expand-sm navbar-light bg-light">
+            <div className="container">
+                <NavLink className="navbar-brand" to="#">Navbar</NavLink>
+                <button
+                    className="navbar-toggler d-lg-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul className="navbar-nav me-auto mt-2 mt-lg-0">
+                        {
+                            menu.map( item =>(
+                                <li className="nav-item" key={item.id}>
+                                    <NavLink className="nav-link" to={item.path}>{item.name} </NavLink>
+                                </li>
+                            ))
+                        } 
+                    </ul>                    
                 </div>
-
-                <ul className="list-unstyled d-flex justify-content-between align-items-center gap-2">
-                    {
-                        menu.map( item =>(
-                            <li key={item.id}>
-                                <NavLink to={item.path}>{item.name} </NavLink>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </nav>
+            </div>
+           </nav>
+           
         </header>
+    </>
     )
 }
